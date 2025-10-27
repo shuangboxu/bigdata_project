@@ -7,8 +7,10 @@ class DataPlanner:
                 "model_training",
                 "evaluation",
                 "visualization",
-                "llm_report"
+                "llm_report",
             ]
         }
         print("[Planner] Created execution plan:", plan["steps"])
-        return {"plan": plan, "data": state["data"]}
+        # propagate the raw data forward so downstream nodes have the
+        # original frame available without having to reload it.
+        return {**state, "plan": plan}
