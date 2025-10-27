@@ -36,7 +36,7 @@ class Reporter:
             report_md = (
                 "# Credit Risk Model Report\n\n"
                 f"- AUC: **{auc:.3f}**\n"
-                "- Data pipeline: preprocessing → feature engineering → model training → evaluation.\n"
+                "- Data pipeline: preprocessing -> feature engineering -> model training -> evaluation.\n"
                 "- Visuals: ROC curve saved by agent.\n\n"
                 "## Key Findings\n"
                 "1. Strong rank ordering (AUC indicates good separability).\n"
