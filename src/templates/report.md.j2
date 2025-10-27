@@ -1,0 +1,55 @@
+# Data Analysis Report
+
+> Auto-generated report (Markdown).
+
+## 1. Regression (Predicting `interestRate`)
+
+{% if ctx.reg %}
+**Validation**:  
+- MAE: {{ ctx.reg.val.MAE | round(4) }}  
+- RMSE: {{ ctx.reg.val.RMSE | round(4) }}  
+- R2: {{ ctx.reg.val.R2 | round(4) }}
+
+**Test**:  
+- MAE: {{ ctx.reg.test.MAE | round(4) }}  
+- RMSE: {{ ctx.reg.test.RMSE | round(4) }}  
+- R2: {{ ctx.reg.test.R2 | round(4) }}
+
+**Figures**:  
+![]({{ ctx.reg_figs.pred_vs_true }})  
+![]({{ ctx.reg_figs.residuals }})
+
+{% else %}
+_No regression results found (run `python main.py train-reg`)._
+{% endif %}
+
+---
+
+## 2. Classification (Predicting `grade`)
+
+{% if ctx.cls %}
+**Metrics**:  
+- Accuracy: {{ ctx.cls.metrics.accuracy | round(4) }}  
+- F1 (macro): {{ ctx.cls.metrics.f1_macro | round(4) }}  
+- F1 (weighted): {{ ctx.cls.metrics.f1_weighted | round(4) }}  
+{% if ctx.cls.metrics.auc_ovr %}- AUC (OvR): {{ ctx.cls.metrics.auc_ovr | round(4) }}{% endif %}
+
+**Figure**:  
+![]({{ ctx.cls_figs.cm }})
+
+{% else %}
+_No classification results found (run `python main.py train-cls`)._
+{% endif %}
+
+---
+
+## 3. Clustering
+
+{% if ctx.clu %}
+Best k: **{{ ctx.clu.best_k }}** (silhouette: **{{ ctx.clu.best_score | round(4) }}**)  
+
+![]({{ ctx.clu_figs.silhouette }})
+
+{% else %}
+_No clustering results found (run `python main.py cluster`)._
+{% endif %}
