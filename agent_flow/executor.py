@@ -1,5 +1,6 @@
 from src.pipeline_cls import run_classification_pipeline
 
+
 class DataExecutor:
     def __call__(self, state):
         df = state["data"]
@@ -7,4 +8,6 @@ class DataExecutor:
         metrics, model = run_classification_pipeline(df)
         if "auc" in metrics:
             print(f"[Executor] Pipeline finished. AUC={metrics['auc']:.4f}")
-        return {"metrics": metrics, "model": model, "data": df}
+        # keep previously computed plan/data so the downstream nodes can
+        # enrich the state without losing context.
+        return {**state, "metrics": metrics, "model": model}

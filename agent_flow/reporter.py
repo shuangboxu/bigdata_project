@@ -53,4 +53,6 @@ class Reporter:
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(report_md)
         print(f"[Reporter] Report saved -> {out_path}")
-        return {"report_text": report_md}
+        # downstream render step expects metrics/roc path/etc. to still be
+        # present on the state, so merge instead of replacing.
+        return {**state, "report_text": report_md}

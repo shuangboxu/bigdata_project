@@ -9,7 +9,7 @@ class Visualizer:
         y_pred = metrics.get("y_pred")
         if y_true is None or y_pred is None:
             print("[Visualizer] y_true / y_pred missing in metrics; skip ROC.")
-            return {}
+            return state
 
         os.makedirs("artifacts/classification", exist_ok=True)
         out_path = "artifacts/classification/roc_curve_agent.png"
@@ -18,4 +18,4 @@ class Visualizer:
         plt.savefig(out_path, dpi=300, bbox_inches="tight")
         plt.close()
         print(f"[Visualizer] ROC saved -> {out_path}")
-        return {"roc_path": out_path}
+        return {**state, "roc_path": out_path}
