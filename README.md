@@ -74,7 +74,26 @@ Run `python main.py --help` for the complete list of switches (including LLM add
 The risk scoring command saves a CSV with borrower-level scores and prints the
 distribution across the low/medium/high risk buckets.
 
-## 6. Repository Layout （项目结构）
+## 6. 风险分析可视化仪表盘
+使用最新的风险评分数据生成一个静态网页仪表盘，帮助决策者快速识别低风险用户。
+
+1. **生成仪表盘 JSON 数据**
+   ```bash
+   python scripts/generate_risk_dashboard_data.py
+   ```
+   - 默认会读取 `artifacts/risk_scores.csv` 并在同一目录写入 `risk_scores.json`。
+   - 如需指定其他数据源或输出路径，可使用 `--input` 与 `--output` 参数，例如：
+     ```bash
+     python scripts/generate_risk_dashboard_data.py --input my_scores.csv --output artifacts/custom_scores.json
+     ```
+
+2. **打开网页仪表盘**
+   - 直接用浏览器打开仓库根目录下的 `index.html`。
+   - 页面会自动加载 `artifacts/risk_scores.json`，展示风险概览、用户排名、分布图表，并提供风险等级、评分阈值与用户 ID 搜索筛选。
+
+当原始 CSV 更新后，重新运行脚本即可刷新网页所用的数据文件。
+
+## 7. Repository Layout （项目结构）
 ```
 agent_flow/        LangGraph agent nodes (planner, executor, visualizer, reporter)
 artifacts/         Persisted models, metrics, and plots
@@ -83,7 +102,7 @@ src/               Data preparation and model code used by the executors
 data/              Input Excel/CSV files (ignored from version control)
 ```
 
-## 7. Troubleshooting （常见问题）
+## 8. Troubleshooting （常见问题）
 - **Input file not found?** Pass `--data` explicitly or set `DATA_FILE`/`WORKFLOW_DATA` before running.
 - **AUC is zero or NaN?** Confirm the target column really is binary and that both classes remain after cleaning.
 - **Images missing in HTML?** Open `reports/workflow_overview.html` from the repository root so relative paths resolve correctly.

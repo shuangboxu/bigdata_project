@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>用户风险分析仪表盘</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg-color: #f5f7fb;
+        --card-bg: #ffffffcc;
+        --text-color: #1f2933;
+        --muted-text: #52606d;
+        --accent: #2563eb;
+        --border-color: #d2d6dc;
+        --risk-low: #10b981;
+        --risk-medium: #fbbf24;
+        --risk-high: #f87171;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 100%);
+        color: var(--text-color);
+        min-height: 100vh;
+      }
+
+      header {
+        padding: 3rem 1rem 1.5rem;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+      }
+
+      header p {
+        margin-top: 0.75rem;
+        color: var(--muted-text);
+        font-size: 1rem;
+      }
+
+      main {
+        max-width: 1200px;
+        margin: 0 auto 4rem;
+        padding: 0 1.25rem 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .card {
+        background: var(--card-bg);
+        border-radius: 1.25rem;
+        box-shadow: 0 20px 40px -24px rgba(15, 23, 42, 0.2);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(226, 232, 240, 0.6);
+        padding: 1.75rem;
+      }
+
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .summary-card h3 {
+        margin: 0;
+        font-size: 0.95rem;
+        color: var(--muted-text);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .summary-card p {
+        margin: 0.4rem 0 0;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .filters label {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.85rem;
+        color: var(--muted-text);
+        font-weight: 600;
+        gap: 0.4rem;
+      }
+
+      .filters input,
+      .filters select {
+        padding: 0.6rem 0.75rem;
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-color);
+        font-size: 0.95rem;
+        min-width: 200px;
+        background: white;
+        color: inherit;
+      }
+
+      .table-wrapper {
+        overflow: auto;
+        border-radius: 1rem;
+        border: 1px solid rgba(226, 232, 240, 0.6);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 720px;
+      }
+
+      thead {
+        background: rgba(37, 99, 235, 0.08);
+      }
+
+      th,
+      td {
+        padding: 0.85rem 1rem;
+        text-align: left;
+        font-size: 0.95rem;
+      }
+
+      tbody tr:nth-child(even) {
+        background: rgba(226, 232, 240, 0.45);
+      }
+
+      tbody tr:hover {
+        background: rgba(59, 130, 246, 0.12);
+      }
+
+      .risk-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.2rem 0.65rem;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: #fff;
+      }
+
+      .risk-tag.low {
+        background: var(--risk-low);
+      }
+
+      .risk-tag.medium {
+        background: var(--risk-medium);
+      }
+
+      .risk-tag.high {
+        background: var(--risk-high);
+      }
+
+      .component-bar {
+        position: relative;
+        height: 0.65rem;
+        border-radius: 999px;
+        background: rgba(148, 163, 184, 0.25);
+        overflow: hidden;
+      }
+
+      .component-bar span {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(59, 130, 246, 0.85), rgba(129, 140, 248, 0.85));
+        transform-origin: left center;
+      }
+
+      .chart-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .chart-card {
+        background: #fff;
+        border-radius: 1rem;
+        padding: 1rem;
+        box-shadow: inset 0 0 0 1px rgba(226, 232, 240, 0.6);
+      }
+
+      .chart-card h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1rem;
+      }
+
+      footer {
+        text-align: center;
+        color: var(--muted-text);
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-color: #0f172a;
+          --card-bg: rgba(15, 23, 42, 0.85);
+          --text-color: #e2e8f0;
+          --muted-text: #94a3b8;
+          --border-color: rgba(148, 163, 184, 0.35);
+        }
+
+        body {
+          background: radial-gradient(circle at top, rgba(37, 99, 235, 0.35), transparent 60%),
+            #0f172a;
+        }
+
+        .filters input,
+        .filters select {
+          background: rgba(15, 23, 42, 0.75);
+        }
+
+        thead {
+          background: rgba(37, 99, 235, 0.25);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>用户风险分析仪表盘</h1>
+      <p>基于最新风险评分数据，快速识别低风险用户并聚焦潜在风险。</p>
+    </header>
+    <main>
+      <section class="card" id="summary-card">
+        <div class="summary-grid">
+          <div class="summary-card">
+            <h3>用户数量</h3>
+            <p id="summary-count">-</p>
+          </div>
+          <div class="summary-card">
+            <h3>平均风险评分</h3>
+            <p id="summary-average">-</p>
+          </div>
+          <div class="summary-card">
+            <h3>最低风险评分</h3>
+            <p id="summary-min">-</p>
+          </div>
+          <div class="summary-card">
+            <h3>最高风险评分</h3>
+            <p id="summary-max">-</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>筛选条件</h2>
+        <div class="filters">
+          <label>
+            风险等级
+            <select id="risk-level-filter">
+              <option value="all">全部</option>
+              <option value="低风险">低风险</option>
+              <option value="中风险">中风险</option>
+              <option value="高风险">高风险</option>
+            </select>
+          </label>
+          <label>
+            最高风险评分
+            <input type="range" id="risk-score-filter" min="0" max="1" step="0.01" value="1" />
+            <span id="risk-score-display">≤ 1.00</span>
+          </label>
+          <label>
+            用户编号搜索
+            <input type="search" id="user-search" placeholder="输入用户ID..." />
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>风险概览</h2>
+        <div class="chart-grid">
+          <div class="chart-card">
+            <h3>风险等级分布</h3>
+            <canvas id="risk-level-chart" height="220"></canvas>
+          </div>
+          <div class="chart-card">
+            <h3>风险评分走势</h3>
+            <canvas id="risk-score-chart" height="220"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>用户排名</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>排名</th>
+                <th>用户ID</th>
+                <th>风险评分</th>
+                <th>风险等级</th>
+                <th>主要驱动因素</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <footer>
+      数据更新时间：<span id="generated-at">-</span>
+    </footer>
+
+    <script>
+      const DATA_URL = "artifacts/risk_scores.json";
+      let allRecords = [];
+      let levelChart;
+      let trendChart;
+
+      const riskLevelFilter = document.getElementById("risk-level-filter");
+      const riskScoreFilter = document.getElementById("risk-score-filter");
+      const riskScoreDisplay = document.getElementById("risk-score-display");
+      const userSearchInput = document.getElementById("user-search");
+
+      function formatScore(value) {
+        return Number.parseFloat(value).toFixed(3);
+      }
+
+      function riskLevelClass(level) {
+        if (level.includes("低")) return "low";
+        if (level.includes("中")) return "medium";
+        return "high";
+      }
+
+      function updateSummary(summary) {
+        document.getElementById("summary-count").textContent = summary.count ?? "-";
+        document.getElementById("summary-average").textContent =
+          summary.average_score !== null && summary.average_score !== undefined
+            ? formatScore(summary.average_score)
+            : "-";
+        document.getElementById("summary-min").textContent =
+          summary.min_score !== null && summary.min_score !== undefined
+            ? formatScore(summary.min_score)
+            : "-";
+        document.getElementById("summary-max").textContent =
+          summary.max_score !== null && summary.max_score !== undefined
+            ? formatScore(summary.max_score)
+            : "-";
+      }
+
+      function renderTable(records) {
+        const tableBody = document.getElementById("table-body");
+        tableBody.innerHTML = "";
+        const fragment = document.createDocumentFragment();
+
+        records.forEach((record) => {
+          const row = document.createElement("tr");
+
+          const components = Object.entries(record.components || {})
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 3)
+            .map(
+              ([name, value]) => `
+                <div>
+                  <span style="display:inline-flex;align-items:center;gap:0.5rem;">
+                    <strong>${name}</strong>
+                    <span class="component-bar">
+                      <span style="transform:scaleX(${Math.min(value, 1)})"></span>
+                    </span>
+                  </span>
+                  <small style="color:var(--muted-text);margin-left:0.5rem;">${formatScore(value)}</small>
+                </div>`
+            )
+            .join("");
+
+          row.innerHTML = `
+            <td>${record.rank}</td>
+            <td>${record.id}</td>
+            <td>${formatScore(record.risk_score)}</td>
+            <td><span class="risk-tag ${riskLevelClass(record.risk_level)}">${record.risk_level}</span></td>
+            <td>${components}</td>
+          `;
+
+          fragment.appendChild(row);
+        });
+
+        tableBody.appendChild(fragment);
+      }
+
+      function updateRiskScoreFilter(records) {
+        if (!records.length) return;
+        const scores = records.map((record) => record.risk_score);
+        const maxScore = Math.max(...scores);
+        const minScore = Math.min(...scores);
+        riskScoreFilter.min = minScore;
+        riskScoreFilter.max = maxScore;
+        riskScoreFilter.value = maxScore;
+        riskScoreFilter.step = 0.01;
+        riskScoreDisplay.textContent = `≤ ${formatScore(maxScore)}`;
+      }
+
+      function applyFilters() {
+        const levelValue = riskLevelFilter.value;
+        const maxScore = Number.parseFloat(riskScoreFilter.value);
+        const query = userSearchInput.value.trim();
+
+        const filtered = allRecords.filter((record) => {
+          const levelMatch = levelValue === "all" || record.risk_level === levelValue;
+          const scoreMatch = record.risk_score <= maxScore + 1e-6;
+          const idMatch = !query || record.id.includes(query);
+          return levelMatch && scoreMatch && idMatch;
+        });
+
+        renderTable(filtered);
+        updateCharts(filtered);
+      }
+
+      function updateCharts(records) {
+        const levelCounts = records.reduce((acc, record) => {
+          const key = record.risk_level;
+          acc[key] = (acc[key] || 0) + 1;
+          return acc;
+        }, {});
+
+        const levelLabels = ["低风险", "中风险", "高风险"];
+        const levelValues = levelLabels.map((label) => levelCounts[label] || 0);
+
+        if (!levelChart) {
+          const ctx = document.getElementById("risk-level-chart");
+          levelChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+              labels: levelLabels,
+              datasets: [
+                {
+                  label: "用户数",
+                  data: levelValues,
+                  backgroundColor: ["var(--risk-low)", "var(--risk-medium)", "var(--risk-high)"],
+                  borderRadius: 12,
+                  borderSkipped: false,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              plugins: {
+                legend: { display: false },
+              },
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  ticks: {
+                    precision: 0,
+                  },
+                },
+              },
+            },
+          });
+        } else {
+          levelChart.data.datasets[0].data = levelValues;
+          levelChart.update();
+        }
+
+        const sortedRecords = [...records].sort((a, b) => a.risk_score - b.risk_score);
+        const labels = sortedRecords.map((record) => record.id);
+        const scores = sortedRecords.map((record) => record.risk_score);
+
+        if (!trendChart) {
+          const ctx = document.getElementById("risk-score-chart");
+          trendChart = new Chart(ctx, {
+            type: "line",
+            data: {
+              labels,
+              datasets: [
+                {
+                  label: "风险评分",
+                  data: scores,
+                  borderColor: "rgba(37, 99, 235, 0.8)",
+                  backgroundColor: "rgba(37, 99, 235, 0.15)",
+                  tension: 0.35,
+                  fill: true,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              plugins: {
+                legend: { display: false },
+                tooltip: {
+                  callbacks: {
+                    title: (context) => `用户 ${context[0].label}`,
+                    label: (context) => `风险评分: ${formatScore(context.parsed.y)}`,
+                  },
+                },
+              },
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  suggestedMax: 1,
+                },
+              },
+            },
+          });
+        } else {
+          trendChart.data.labels = labels;
+          trendChart.data.datasets[0].data = scores;
+          trendChart.update();
+        }
+      }
+
+      async function init() {
+        try {
+          const response = await fetch(DATA_URL);
+          if (!response.ok) {
+            throw new Error(`无法加载数据：${response.status}`);
+          }
+          const data = await response.json();
+          allRecords = data.records || [];
+          updateSummary(data.summary || {});
+          updateRiskScoreFilter(allRecords);
+          renderTable(allRecords);
+          updateCharts(allRecords);
+          document.getElementById("generated-at").textContent =
+            new Date(data.generated_at).toLocaleString();
+        } catch (error) {
+          console.error(error);
+          alert("无法加载风险数据，请确认已运行数据生成脚本。");
+        }
+      }
+
+      riskLevelFilter.addEventListener("change", applyFilters);
+      riskScoreFilter.addEventListener("input", () => {
+        riskScoreDisplay.textContent = `≤ ${formatScore(riskScoreFilter.value)}`;
+        applyFilters();
+      });
+      userSearchInput.addEventListener("input", () => {
+        applyFilters();
+      });
+
+      init();
+    </script>
+  </body>
+</html>
