@@ -1,0 +1,1516 @@
+{
+  "generated_at": "2025-10-31T12:49:42.072432+00:00",
+  "records": [
+    {
+      "id": "800042",
+      "risk_score": 0.0001,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.0,
+        "debt_to_income": 0.0,
+        "revol_util": 0.0011,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.0,
+        "annual_income": 0.0
+      },
+      "rank": 1
+    },
+    {
+      "id": "800005",
+      "risk_score": 0.0907,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.0,
+        "debt_to_income": 0.3575,
+        "revol_util": 0.0234,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.0,
+        "annual_income": 0.3474
+      },
+      "rank": 2
+    },
+    {
+      "id": "800074",
+      "risk_score": 0.0921,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.0,
+        "debt_to_income": 0.0,
+        "revol_util": 0.0,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.0,
+        "annual_income": 0.9211
+      },
+      "rank": 3
+    },
+    {
+      "id": "800030",
+      "risk_score": 0.0927,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.0793,
+        "debt_to_income": 0.0003,
+        "revol_util": 0.0877,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.011,
+        "annual_income": 0.5792
+      },
+      "rank": 4
+    },
+    {
+      "id": "800071",
+      "risk_score": 0.0988,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.0,
+        "debt_to_income": 0.0306,
+        "revol_util": 0.2496,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.0659,
+        "annual_income": 0.5605
+      },
+      "rank": 5
+    },
+    {
+      "id": "800092",
+      "risk_score": 0.0988,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.0,
+        "debt_to_income": 0.0408,
+        "revol_util": 0.2607,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.2857,
+        "annual_income": 0.0948
+      },
+      "rank": 6
+    },
+    {
+      "id": "800052",
+      "risk_score": 0.1197,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.0508,
+        "debt_to_income": 0.0,
+        "revol_util": 0.0036,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.2308,
+        "annual_income": 0.5792
+      },
+      "rank": 7
+    },
+    {
+      "id": "800081",
+      "risk_score": 0.1419,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.065,
+        "debt_to_income": 0.324,
+        "revol_util": 0.2039,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.0,
+        "annual_income": 0.5335
+      },
+      "rank": 8
+    },
+    {
+      "id": "800036",
+      "risk_score": 0.1487,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.057,
+        "debt_to_income": 0.3741,
+        "revol_util": 0.0,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.0,
+        "annual_income": 0.755
+      },
+      "rank": 9
+    },
+    {
+      "id": "800007",
+      "risk_score": 0.1523,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.0793,
+        "debt_to_income": 0.2885,
+        "revol_util": 0.147,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.011,
+        "annual_income": 0.6835
+      },
+      "rank": 10
+    },
+    {
+      "id": "800064",
+      "risk_score": 0.1702,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.1481,
+        "debt_to_income": 0.4103,
+        "revol_util": 0.0431,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.0659,
+        "annual_income": 0.4671
+      },
+      "rank": 11
+    },
+    {
+      "id": "800062",
+      "risk_score": 0.1725,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.5309,
+        "debt_to_income": 0.0,
+        "revol_util": 0.0,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.0659,
+        "annual_income": 0.0
+      },
+      "rank": 12
+    },
+    {
+      "id": "800061",
+      "risk_score": 0.1807,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.1127,
+        "debt_to_income": 0.3945,
+        "revol_util": 0.0802,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.2308,
+        "annual_income": 0.3348
+      },
+      "rank": 13
+    },
+    {
+      "id": "800018",
+      "risk_score": 0.183,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.0105,
+        "debt_to_income": 0.3353,
+        "revol_util": 0.4252,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.2857,
+        "annual_income": 0.2987
+      },
+      "rank": 14
+    },
+    {
+      "id": "800026",
+      "risk_score": 0.2369,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.0558,
+        "debt_to_income": 0.4963,
+        "revol_util": 0.5167,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.3407,
+        "annual_income": 0.2593
+      },
+      "rank": 15
+    },
+    {
+      "id": "800009",
+      "risk_score": 0.246,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.1004,
+        "debt_to_income": 0.3099,
+        "revol_util": 0.8084,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.3956,
+        "annual_income": 0.0948
+      },
+      "rank": 16
+    },
+    {
+      "id": "800048",
+      "risk_score": 0.2568,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.1307,
+        "debt_to_income": 0.4558,
+        "revol_util": 0.0394,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.4505,
+        "annual_income": 0.5513
+      },
+      "rank": 17
+    },
+    {
+      "id": "800032",
+      "risk_score": 0.2629,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.223,
+        "debt_to_income": 0.0658,
+        "revol_util": 0.5859,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.5055,
+        "annual_income": 0.2648
+      },
+      "rank": 18
+    },
+    {
+      "id": "800093",
+      "risk_score": 0.2726,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.1611,
+        "debt_to_income": 0.2434,
+        "revol_util": 0.6724,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.4505,
+        "annual_income": 0.3046
+      },
+      "rank": 19
+    },
+    {
+      "id": "800075",
+      "risk_score": 0.277,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.2119,
+        "debt_to_income": 0.7598,
+        "revol_util": 0.0,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.2308,
+        "annual_income": 0.5335
+      },
+      "rank": 20
+    },
+    {
+      "id": "800068",
+      "risk_score": 0.2838,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.3048,
+        "debt_to_income": 0.4276,
+        "revol_util": 0.2002,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.3407,
+        "annual_income": 0.4006
+      },
+      "rank": 21
+    },
+    {
+      "id": "800044",
+      "risk_score": 0.2988,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.1004,
+        "debt_to_income": 0.2226,
+        "revol_util": 0.3423,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.5055,
+        "annual_income": 1.0
+      },
+      "rank": 22
+    },
+    {
+      "id": "800031",
+      "risk_score": 0.3147,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.0793,
+        "debt_to_income": 0.0996,
+        "revol_util": 0.3114,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.7802,
+        "annual_income": 0.8874
+      },
+      "rank": 23
+    },
+    {
+      "id": "800000",
+      "risk_score": 0.316,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.3048,
+        "debt_to_income": 0.1912,
+        "revol_util": 0.2533,
+        "delinq_2yrs": 0.5,
+        "term": 0.0,
+        "fico": 0.3956,
+        "annual_income": 0.4148
+      },
+      "rank": 24
+    },
+    {
+      "id": "800017",
+      "risk_score": 0.321,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.3853,
+        "debt_to_income": 0.0,
+        "revol_util": 1.0,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.2857,
+        "annual_income": 0.483
+      },
+      "rank": 25
+    },
+    {
+      "id": "800045",
+      "risk_score": 0.3249,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.2998,
+        "debt_to_income": 0.1704,
+        "revol_util": 0.9123,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.3407,
+        "annual_income": 0.0
+      },
+      "rank": 26
+    },
+    {
+      "id": "800076",
+      "risk_score": 0.3291,
+      "risk_level": "低风险",
+      "components": {
+        "interest_rate": 0.026,
+        "debt_to_income": 0.6749,
+        "revol_util": 0.4103,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.3956,
+        "annual_income": 0.9989
+      },
+      "rank": 27
+    },
+    {
+      "id": "800098",
+      "risk_score": 0.3313,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.4058,
+        "debt_to_income": 0.1074,
+        "revol_util": 0.0,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.4505,
+        "annual_income": 0.5335
+      },
+      "rank": 28
+    },
+    {
+      "id": "800021",
+      "risk_score": 0.3349,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3296,
+        "debt_to_income": 0.1775,
+        "revol_util": 0.6737,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.3956,
+        "annual_income": 0.629
+      },
+      "rank": 29
+    },
+    {
+      "id": "800015",
+      "risk_score": 0.3429,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.0,
+        "debt_to_income": 0.8401,
+        "revol_util": 0.5018,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.5055,
+        "annual_income": 0.6556
+      },
+      "rank": 30
+    },
+    {
+      "id": "800088",
+      "risk_score": 0.3456,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.1127,
+        "debt_to_income": 0.7041,
+        "revol_util": 0.0753,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.5055,
+        "annual_income": 0.9755
+      },
+      "rank": 31
+    },
+    {
+      "id": "800029",
+      "risk_score": 0.3485,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3358,
+        "debt_to_income": 0.4195,
+        "revol_util": 0.3856,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.5055,
+        "annual_income": 0.4517
+      },
+      "rank": 32
+    },
+    {
+      "id": "800023",
+      "risk_score": 0.3769,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.0378,
+        "debt_to_income": 1.0,
+        "revol_util": 0.6428,
+        "delinq_2yrs": 0.5,
+        "term": 0.0,
+        "fico": 0.2308,
+        "annual_income": 0.5513
+      },
+      "rank": 33
+    },
+    {
+      "id": "800087",
+      "risk_score": 0.3777,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.1307,
+        "debt_to_income": 0.1944,
+        "revol_util": 0.8554,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.9451,
+        "annual_income": 0.3474
+      },
+      "rank": 34
+    },
+    {
+      "id": "800033",
+      "risk_score": 0.3778,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.1437,
+        "debt_to_income": 0.7017,
+        "revol_util": 0.283,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.7253,
+        "annual_income": 0.5605
+      },
+      "rank": 35
+    },
+    {
+      "id": "800096",
+      "risk_score": 0.3819,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.1611,
+        "debt_to_income": 0.4945,
+        "revol_util": 0.7355,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.6703,
+        "annual_income": 0.5174
+      },
+      "rank": 36
+    },
+    {
+      "id": "800070",
+      "risk_score": 0.386,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.228,
+        "debt_to_income": 0.7045,
+        "revol_util": 0.9988,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.5604,
+        "annual_income": 0.0
+      },
+      "rank": 37
+    },
+    {
+      "id": "800072",
+      "risk_score": 0.3913,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3413,
+        "debt_to_income": 0.4621,
+        "revol_util": 0.9197,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.5055,
+        "annual_income": 0.2648
+      },
+      "rank": 38
+    },
+    {
+      "id": "800020",
+      "risk_score": 0.3961,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.1307,
+        "debt_to_income": 0.6453,
+        "revol_util": 0.8307,
+        "delinq_2yrs": 0.5,
+        "term": 0.0,
+        "fico": 0.5055,
+        "annual_income": 0.2593
+      },
+      "rank": 39
+    },
+    {
+      "id": "800016",
+      "risk_score": 0.3966,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.4058,
+        "debt_to_income": 0.2747,
+        "revol_util": 0.0753,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.7253,
+        "annual_income": 0.8111
+      },
+      "rank": 40
+    },
+    {
+      "id": "800095",
+      "risk_score": 0.4007,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3048,
+        "debt_to_income": 0.3226,
+        "revol_util": 0.6514,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.8352,
+        "annual_income": 0.2872
+      },
+      "rank": 41
+    },
+    {
+      "id": "800043",
+      "risk_score": 0.4016,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.4101,
+        "debt_to_income": 0.2793,
+        "revol_util": 0.3052,
+        "delinq_2yrs": 0.5,
+        "term": 0.0,
+        "fico": 0.7802,
+        "annual_income": 0.0009
+      },
+      "rank": 42
+    },
+    {
+      "id": "800073",
+      "risk_score": 0.4051,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.2738,
+        "debt_to_income": 0.0492,
+        "revol_util": 0.5599,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 1.0,
+        "annual_income": 0.596
+      },
+      "rank": 43
+    },
+    {
+      "id": "800094",
+      "risk_score": 0.4063,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3748,
+        "debt_to_income": 0.5978,
+        "revol_util": 0.4314,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.6154,
+        "annual_income": 0.3801
+      },
+      "rank": 44
+    },
+    {
+      "id": "800038",
+      "risk_score": 0.4139,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.1914,
+        "debt_to_income": 0.4406,
+        "revol_util": 0.7664,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.8352,
+        "annual_income": 0.4671
+      },
+      "rank": 45
+    },
+    {
+      "id": "800065",
+      "risk_score": 0.415,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3358,
+        "debt_to_income": 0.2088,
+        "revol_util": 0.4487,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.9451,
+        "annual_income": 0.4911
+      },
+      "rank": 46
+    },
+    {
+      "id": "800051",
+      "risk_score": 0.422,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.2428,
+        "debt_to_income": 0.4311,
+        "revol_util": 0.5401,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.9451,
+        "annual_income": 0.4148
+      },
+      "rank": 47
+    },
+    {
+      "id": "800006",
+      "risk_score": 0.4305,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.5526,
+        "debt_to_income": 0.6274,
+        "revol_util": 0.372,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.3407,
+        "annual_income": 0.1528
+      },
+      "rank": 48
+    },
+    {
+      "id": "800097",
+      "risk_score": 0.4307,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.4597,
+        "debt_to_income": 0.5942,
+        "revol_util": 0.0567,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.6703,
+        "annual_income": 0.6395
+      },
+      "rank": 49
+    },
+    {
+      "id": "800047",
+      "risk_score": 0.433,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3358,
+        "debt_to_income": 0.6097,
+        "revol_util": 0.7083,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.5604,
+        "annual_income": 0.5792
+      },
+      "rank": 50
+    },
+    {
+      "id": "800025",
+      "risk_score": 0.4343,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3667,
+        "debt_to_income": 0.3843,
+        "revol_util": 0.6193,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.6154,
+        "annual_income": 0.3165
+      },
+      "rank": 51
+    },
+    {
+      "id": "800069",
+      "risk_score": 0.4414,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.1127,
+        "debt_to_income": 0.2412,
+        "revol_util": 0.8183,
+        "delinq_2yrs": 1.0,
+        "term": 0.0,
+        "fico": 0.8901,
+        "annual_income": 0.1156
+      },
+      "rank": 52
+    },
+    {
+      "id": "800027",
+      "risk_score": 0.4415,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3048,
+        "debt_to_income": 0.4625,
+        "revol_util": 0.5587,
+        "delinq_2yrs": 0.5,
+        "term": 0.0,
+        "fico": 0.6703,
+        "annual_income": 0.4077
+      },
+      "rank": 53
+    },
+    {
+      "id": "800055",
+      "risk_score": 0.4556,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3358,
+        "debt_to_income": 0.225,
+        "revol_util": 0.4276,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 1.0,
+        "annual_income": 0.7832
+      },
+      "rank": 54
+    },
+    {
+      "id": "800039",
+      "risk_score": 0.4732,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.2695,
+        "debt_to_income": 0.0972,
+        "revol_util": 1.0,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.9451,
+        "annual_income": 0.8874
+      },
+      "rank": 55
+    },
+    {
+      "id": "800067",
+      "risk_score": 0.4764,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3977,
+        "debt_to_income": 0.5713,
+        "revol_util": 1.0,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.6154,
+        "annual_income": 0.483
+      },
+      "rank": 56
+    },
+    {
+      "id": "800086",
+      "risk_score": 0.4764,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3382,
+        "debt_to_income": 0.2342,
+        "revol_util": 0.9889,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.8901,
+        "annual_income": 0.629
+      },
+      "rank": 57
+    },
+    {
+      "id": "800019",
+      "risk_score": 0.4805,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.5197,
+        "debt_to_income": 0.6932,
+        "revol_util": 0.4882,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.5055,
+        "annual_income": 0.7068
+      },
+      "rank": 58
+    },
+    {
+      "id": "800046",
+      "risk_score": 0.4951,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3469,
+        "debt_to_income": 0.4315,
+        "revol_util": 0.644,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 1.0,
+        "annual_income": 0.6187
+      },
+      "rank": 59
+    },
+    {
+      "id": "800059",
+      "risk_score": 0.4959,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.5197,
+        "debt_to_income": 0.8969,
+        "revol_util": 0.9333,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.5604,
+        "annual_income": 0.0
+      },
+      "rank": 60
+    },
+    {
+      "id": "800090",
+      "risk_score": 0.4984,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.5594,
+        "debt_to_income": 0.5544,
+        "revol_util": 0.7256,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.4505,
+        "annual_income": 0.3474
+      },
+      "rank": 61
+    },
+    {
+      "id": "800057",
+      "risk_score": 0.4994,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.4287,
+        "debt_to_income": 0.7563,
+        "revol_util": 0.9988,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.7253,
+        "annual_income": 0.1241
+      },
+      "rank": 62
+    },
+    {
+      "id": "800053",
+      "risk_score": 0.5009,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.5563,
+        "debt_to_income": 0.5731,
+        "revol_util": 0.7392,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.1209,
+        "annual_income": 1.0
+      },
+      "rank": 63
+    },
+    {
+      "id": "800089",
+      "risk_score": 0.5026,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3748,
+        "debt_to_income": 0.5565,
+        "revol_util": 0.6897,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.8352,
+        "annual_income": 0.7068
+      },
+      "rank": 64
+    },
+    {
+      "id": "800078",
+      "risk_score": 0.5038,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3667,
+        "debt_to_income": 0.5668,
+        "revol_util": 0.0889,
+        "delinq_2yrs": 0.5,
+        "term": 0.0,
+        "fico": 0.8901,
+        "annual_income": 0.7189
+      },
+      "rank": 65
+    },
+    {
+      "id": "800041",
+      "risk_score": 0.5134,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3327,
+        "debt_to_income": 0.5988,
+        "revol_util": 0.3609,
+        "delinq_2yrs": 0.5,
+        "term": 0.0,
+        "fico": 0.8352,
+        "annual_income": 0.7068
+      },
+      "rank": 66
+    },
+    {
+      "id": "800004",
+      "risk_score": 0.5276,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.6827,
+        "debt_to_income": 0.6989,
+        "revol_util": 0.3139,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.7253,
+        "annual_income": 0.4148
+      },
+      "rank": 67
+    },
+    {
+      "id": "800003",
+      "risk_score": 0.5324,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.5105,
+        "debt_to_income": 0.3106,
+        "revol_util": 0.5204,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.7253,
+        "annual_income": 0.8556
+      },
+      "rank": 68
+    },
+    {
+      "id": "800054",
+      "risk_score": 0.5358,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 1.0,
+        "debt_to_income": 0.4864,
+        "revol_util": 0.0234,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.2857,
+        "annual_income": 0.5335
+      },
+      "rank": 69
+    },
+    {
+      "id": "800037",
+      "risk_score": 0.5366,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.3345,
+        "debt_to_income": 0.3226,
+        "revol_util": 0.5624,
+        "delinq_2yrs": 1.0,
+        "term": 0.0,
+        "fico": 1.0,
+        "annual_income": 0.3165
+      },
+      "rank": 70
+    },
+    {
+      "id": "800050",
+      "risk_score": 0.5441,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.6145,
+        "debt_to_income": 0.3681,
+        "revol_util": 1.0,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.9451,
+        "annual_income": 0.155
+      },
+      "rank": 71
+    },
+    {
+      "id": "800049",
+      "risk_score": 0.548,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.6492,
+        "debt_to_income": 0.1475,
+        "revol_util": 0.7318,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 1.0,
+        "annual_income": 0.5792
+      },
+      "rank": 72
+    },
+    {
+      "id": "800099",
+      "risk_score": 0.5556,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.591,
+        "debt_to_income": 0.7211,
+        "revol_util": 0.8851,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.3956,
+        "annual_income": 0.5247
+      },
+      "rank": 73
+    },
+    {
+      "id": "800014",
+      "risk_score": 0.5578,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.5724,
+        "debt_to_income": 0.3226,
+        "revol_util": 0.644,
+        "delinq_2yrs": 0.5,
+        "term": 0.0,
+        "fico": 0.8352,
+        "annual_income": 0.5623
+      },
+      "rank": 74
+    },
+    {
+      "id": "800002",
+      "risk_score": 0.5658,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.8623,
+        "debt_to_income": 0.9994,
+        "revol_util": 0.0914,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.4505,
+        "annual_income": 0.5792
+      },
+      "rank": 75
+    },
+    {
+      "id": "800012",
+      "risk_score": 0.5725,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 1.0,
+        "debt_to_income": 0.1218,
+        "revol_util": 0.6897,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.4505,
+        "annual_income": 0.4517
+      },
+      "rank": 76
+    },
+    {
+      "id": "800077",
+      "risk_score": 0.573,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.591,
+        "debt_to_income": 0.2264,
+        "revol_util": 0.8134,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 1.0,
+        "annual_income": 0.804
+      },
+      "rank": 77
+    },
+    {
+      "id": "800010",
+      "risk_score": 0.581,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.8623,
+        "debt_to_income": 0.3734,
+        "revol_util": 0.5352,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.8901,
+        "annual_income": 0.3474
+      },
+      "rank": 78
+    },
+    {
+      "id": "800084",
+      "risk_score": 0.5875,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.9552,
+        "debt_to_income": 0.4819,
+        "revol_util": 0.3683,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.5055,
+        "annual_income": 0.4077
+      },
+      "rank": 79
+    },
+    {
+      "id": "800022",
+      "risk_score": 0.5887,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.7124,
+        "debt_to_income": 0.8412,
+        "revol_util": 0.5562,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.5604,
+        "annual_income": 0.8111
+      },
+      "rank": 80
+    },
+    {
+      "id": "800091",
+      "risk_score": 0.6049,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.5526,
+        "debt_to_income": 0.366,
+        "revol_util": 0.5983,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 1.0,
+        "annual_income": 0.7437
+      },
+      "rank": 81
+    },
+    {
+      "id": "800085",
+      "risk_score": 0.6059,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.7545,
+        "debt_to_income": 0.7218,
+        "revol_util": 0.4746,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.7253,
+        "annual_income": 0.2872
+      },
+      "rank": 82
+    },
+    {
+      "id": "800013",
+      "risk_score": 0.6078,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.6938,
+        "debt_to_income": 0.6129,
+        "revol_util": 0.6539,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.9451,
+        "annual_income": 0.5335
+      },
+      "rank": 83
+    },
+    {
+      "id": "800063",
+      "risk_score": 0.6364,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.7545,
+        "debt_to_income": 0.3265,
+        "revol_util": 0.7207,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.9451,
+        "annual_income": 1.0
+      },
+      "rank": 84
+    },
+    {
+      "id": "800011",
+      "risk_score": 0.6504,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.5563,
+        "debt_to_income": 1.0,
+        "revol_util": 0.508,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 1.0,
+        "annual_income": 0.8273
+      },
+      "rank": 85
+    },
+    {
+      "id": "800082",
+      "risk_score": 0.6547,
+      "risk_level": "中风险",
+      "components": {
+        "interest_rate": 0.4906,
+        "debt_to_income": 0.9243,
+        "revol_util": 0.9086,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 0.8901,
+        "annual_income": 1.0
+      },
+      "rank": 86
+    },
+    {
+      "id": "800028",
+      "risk_score": 0.6615,
+      "risk_level": "高风险",
+      "components": {
+        "interest_rate": 0.9249,
+        "debt_to_income": 0.2627,
+        "revol_util": 0.9333,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.8901,
+        "annual_income": 0.2327
+      },
+      "rank": 87
+    },
+    {
+      "id": "800024",
+      "risk_score": 0.6645,
+      "risk_level": "高风险",
+      "components": {
+        "interest_rate": 0.6765,
+        "debt_to_income": 0.5911,
+        "revol_util": 0.3201,
+        "delinq_2yrs": 1.0,
+        "term": 0.0,
+        "fico": 0.8901,
+        "annual_income": 0.629
+      },
+      "rank": 88
+    },
+    {
+      "id": "800008",
+      "risk_score": 0.6659,
+      "risk_level": "高风险",
+      "components": {
+        "interest_rate": 0.6492,
+        "debt_to_income": 0.6355,
+        "revol_util": 0.0988,
+        "delinq_2yrs": 1.0,
+        "term": 1.0,
+        "fico": 0.7802,
+        "annual_income": 0.5986
+      },
+      "rank": 89
+    },
+    {
+      "id": "800083",
+      "risk_score": 0.6774,
+      "risk_level": "高风险",
+      "components": {
+        "interest_rate": 0.9243,
+        "debt_to_income": 0.5562,
+        "revol_util": 0.3782,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.8352,
+        "annual_income": 0.6187
+      },
+      "rank": 90
+    },
+    {
+      "id": "800035",
+      "risk_score": 0.6802,
+      "risk_level": "高风险",
+      "components": {
+        "interest_rate": 0.591,
+        "debt_to_income": 1.0,
+        "revol_util": 0.5884,
+        "delinq_2yrs": 1.0,
+        "term": 1.0,
+        "fico": 0.5055,
+        "annual_income": 0.4292
+      },
+      "rank": 91
+    },
+    {
+      "id": "800040",
+      "risk_score": 0.6811,
+      "risk_level": "高风险",
+      "components": {
+        "interest_rate": 0.6009,
+        "debt_to_income": 1.0,
+        "revol_util": 0.508,
+        "delinq_2yrs": 0.0,
+        "term": 0.0,
+        "fico": 1.0,
+        "annual_income": 1.0
+      },
+      "rank": 92
+    },
+    {
+      "id": "800034",
+      "risk_score": 0.6928,
+      "risk_level": "高风险",
+      "components": {
+        "interest_rate": 1.0,
+        "debt_to_income": 0.5932,
+        "revol_util": 0.4536,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.6703,
+        "annual_income": 0.7437
+      },
+      "rank": 93
+    },
+    {
+      "id": "800001",
+      "risk_score": 0.6991,
+      "risk_level": "高风险",
+      "components": {
+        "interest_rate": 0.5315,
+        "debt_to_income": 0.5731,
+        "revol_util": 0.5735,
+        "delinq_2yrs": 1.0,
+        "term": 1.0,
+        "fico": 0.8901,
+        "annual_income": 0.6835
+      },
+      "rank": 94
+    },
+    {
+      "id": "800080",
+      "risk_score": 0.7146,
+      "risk_level": "高风险",
+      "components": {
+        "interest_rate": 1.0,
+        "debt_to_income": 0.3089,
+        "revol_util": 1.0,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 1.0,
+        "annual_income": 0.1829
+      },
+      "rank": 95
+    },
+    {
+      "id": "800060",
+      "risk_score": 0.7175,
+      "risk_level": "高风险",
+      "components": {
+        "interest_rate": 0.9552,
+        "debt_to_income": 0.9574,
+        "revol_util": 0.5031,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.6154,
+        "annual_income": 0.6395
+      },
+      "rank": 96
+    },
+    {
+      "id": "800066",
+      "risk_score": 0.7318,
+      "risk_level": "高风险",
+      "components": {
+        "interest_rate": 0.7669,
+        "debt_to_income": 1.0,
+        "revol_util": 0.7231,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 0.6703,
+        "annual_income": 0.9531
+      },
+      "rank": 97
+    },
+    {
+      "id": "800079",
+      "risk_score": 0.7716,
+      "risk_level": "高风险",
+      "components": {
+        "interest_rate": 0.6765,
+        "debt_to_income": 0.9648,
+        "revol_util": 0.4425,
+        "delinq_2yrs": 1.0,
+        "term": 0.0,
+        "fico": 1.0,
+        "annual_income": 0.7969
+      },
+      "rank": 98
+    },
+    {
+      "id": "800056",
+      "risk_score": 0.8029,
+      "risk_level": "高风险",
+      "components": {
+        "interest_rate": 1.0,
+        "debt_to_income": 0.4526,
+        "revol_util": 0.9086,
+        "delinq_2yrs": 0.5,
+        "term": 1.0,
+        "fico": 0.8901,
+        "annual_income": 0.6611
+      },
+      "rank": 99
+    },
+    {
+      "id": "800058",
+      "risk_score": 0.8526,
+      "risk_level": "高风险",
+      "components": {
+        "interest_rate": 0.9961,
+        "debt_to_income": 0.8884,
+        "revol_util": 0.9222,
+        "delinq_2yrs": 0.0,
+        "term": 1.0,
+        "fico": 1.0,
+        "annual_income": 0.7832
+      },
+      "rank": 100
+    }
+  ],
+  "summary": {
+    "count": 100,
+    "average_score": 0.437,
+    "min_score": 0.0001,
+    "max_score": 0.8526,
+    "level_counts": {
+      "低风险": 27,
+      "中风险": 59,
+      "高风险": 14
+    }
+  }
+}
