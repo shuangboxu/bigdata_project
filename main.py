@@ -106,7 +106,8 @@ def main():
         summary = summarize_risk(risk_df)
         out_path = Path(getattr(args, "output_path"))
         out_path.parent.mkdir(parents=True, exist_ok=True)
-        risk_df.to_csv(out_path, index=False)
+        # Use UTF-8 with BOM so Excel keeps Chinese characters intact.
+        risk_df.to_csv(out_path, index=False, encoding="utf-8-sig")
         print("Risk distribution:", summary)
         print(f"Risk assessment saved to: {out_path}")
     else:

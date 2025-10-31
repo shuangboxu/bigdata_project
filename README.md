@@ -65,7 +65,7 @@ python main.py train-reg --in data/sample.xlsx --target interestRate
 python main.py cluster --in data/sample.xlsx
 
 # Credit risk scoring on tabular data
-python main.py risk-score --in data/sample.xlsx --out artifacts/risk_scores.csv
+python main.py risk-score --in data/数据示例.xlsx --out artifacts/risk_scores.csv
 
 # Build the static report bundle
 python main.py report
