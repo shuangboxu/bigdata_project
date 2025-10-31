@@ -1,0 +1,40 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables files
+.env
+.env.*
+
+# IDE settings
+.vscode/
+.idea/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+~*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Generated artifacts
+artifacts/
+reports/*.html
+
+# Coverage and test caches
+.coverage
+htmlcov/
+.pytest_cache/
+
