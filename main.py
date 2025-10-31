@@ -7,6 +7,7 @@ from src.pipeline_reg import train_regression
 from src.pipeline_cls import train_classification
 from src.cluster import run_clustering
 from src.report import compile_report
+from src.risk_assessment import assess_risk, summarize_risk
 from src.config import DEFAULT_INPUT
 
 try:
@@ -40,6 +41,11 @@ def main():
 
     # 报告
     sub.add_parser("report")
+
+    # 风险评估
+    p_risk = sub.add_parser("risk-score")
+    p_risk.add_argument("--in", dest="input_path", default=str(DEFAULT_INPUT))
+    p_risk.add_argument("--out", dest="output_path", default="artifacts/risk_scores.csv")
 
     # LLM 洞见
     p_llm = sub.add_parser("report-llm")
@@ -95,6 +101,14 @@ def main():
     elif args.cmd == "cluster":
         res = run_clustering(df)
         print("Clustering:", res)
+    elif args.cmd == "risk-score":
+        risk_df = assess_risk(df)
+        summary = summarize_risk(risk_df)
+        out_path = Path(getattr(args, "output_path"))
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        risk_df.to_csv(out_path, index=False)
+        print("Risk distribution:", summary)
+        print(f"Risk assessment saved to: {out_path}")
     else:
         parser.print_help()
 

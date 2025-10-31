@@ -64,10 +64,15 @@ python main.py train-reg --in data/sample.xlsx --target interestRate
 # Unsupervised clustering
 python main.py cluster --in data/sample.xlsx
 
+# Credit risk scoring on tabular data
+python main.py risk-score --in data/sample.xlsx --out artifacts/risk_scores.csv
+
 # Build the static report bundle
 python main.py report
 ```
 Run `python main.py --help` for the complete list of switches (including LLM add-ons under `report-llm`).
+The risk scoring command saves a CSV with borrower-level scores and prints the
+distribution across the low/medium/high risk buckets.
 
 ## 6. Repository Layout （项目结构）
 ```
