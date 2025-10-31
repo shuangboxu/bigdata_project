@@ -1,0 +1,14 @@
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+skip-string-normalization = true
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_first_party = ["your_package_name"]
+
+[tool.ruff]
+line-length = 88
+select = ["E", "W", "F", "I", "C", "B", "TIDY", "UP"]
+ignore = []
