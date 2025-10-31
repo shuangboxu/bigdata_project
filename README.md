@@ -1,4 +1,4 @@
-# LangGraph Credit Risk Workflow
+﻿# LangGraph Credit Risk Workflow
 
 A reproducible end-to-end project for credit risk data analysis with LangGraph agents, classic CLI utilities, automated charts, and LLM-generated reports.
 

@@ -36,7 +36,15 @@ def _split_time_aware(df: pd.DataFrame, time_col="issueDate", val_ratio=0.2, tes
 def _save_cm(y_true, y_pred, labels, outdir: Path):
     outdir.mkdir(parents=True, exist_ok=True)
     fig, ax = plt.subplots(figsize=(5,4))
-    ConfusionMatrixDisplay.from_predictions(y_true, y_pred, display_labels=labels, ax=ax, colorbar=False)
+    label_ids = list(range(len(labels)))
+    ConfusionMatrixDisplay.from_predictions(
+        y_true,
+        y_pred,
+        labels=label_ids,
+        display_labels=labels,
+        ax=ax,
+        colorbar=False,
+    )
     ax.set_title("Confusion Matrix")
     fig.tight_layout()
     fig.savefig(outdir / "confusion_matrix.png", dpi=150)
@@ -59,7 +67,7 @@ def train_classification(df: pd.DataFrame, target="grade") -> Dict[str, Any]:
     pre = ColumnTransformer(
         transformers=[
             ("num", Pipeline([("imp", SimpleImputer(strategy="median")), ("sc", StandardScaler())]), num_cols),
-            ("cat", Pipeline([("imp", SimpleImputer(strategy="most_frequent")), ("oh", OneHotEncoder(handle_unknown="ignore", min_frequency=0.01))]), cat_cols),
+            ("cat", Pipeline([("imp", SimpleImputer(strategy="most_frequent")), ("oh", OneHotEncoder(handle_unknown="ignore", sparse_output=False, min_frequency=0.01))]), cat_cols),
         ],
         remainder="drop"
     )
@@ -166,9 +174,25 @@ def run_classification_pipeline(df):
     y_mapped = _coerce_binary_label(y_raw)
 
     # 3) assemble features and clean
-    X = df.drop(columns=[target_col])
+    X = df.drop(columns=[target_col]).copy()
+
+    # try normalising object columns that actually hold numbers
+    obj_like = X.select_dtypes(include=["object", "string"]).columns.tolist()
+    if obj_like:
+        # remove common non-numeric symbols before coercion
+        cleanup = (
+            X[obj_like]
+            .apply(lambda col: col.astype(str).str.replace(r"[,\s%￥¥]", "", regex=True))
+        )
+        coerced = cleanup.apply(pd.to_numeric, errors="coerce")
+        # keep coerced column when most values converted successfully
+        for col in obj_like:
+            valid_ratio = coerced[col].notna().mean()
+            if valid_ratio >= 0.5:
+                X[col] = coerced[col]
+
     # only numeric features to keep it simple/robust
-    X = X.select_dtypes(include=["number"]).copy()
+    X = X.select_dtypes(include=["number", "bool"]).copy()
     if X.empty:
         raise ValueError("No numeric features found for classification.")
 

@@ -1,6 +1,6 @@
 # Credit Risk Model Report
 
-- AUC: **0.936**
+- AUC: **0.641**
 - Data pipeline: preprocessing -> feature engineering -> model training -> evaluation.
 - Visuals: ROC curve saved by agent.
 

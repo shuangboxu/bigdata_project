@@ -48,15 +48,32 @@ def _save_figs(y_true, y_pred, outdir: Path):
 def train_regression(df: pd.DataFrame, target="interestRate") -> Dict[str, Any]:
     df = build_features(df)
     y = pd.to_numeric(df[target], errors="coerce").astype(float)
-    X = df.drop(columns=[target])
+    valid = y.notna() & np.isfinite(y)
+    if valid.sum() == 0:
+        raise ValueError("Target column has no valid numeric values after cleaning.")
+    y = y.loc[valid]
+    X = df.drop(columns=[target]).loc[valid].copy()
 
-    num_cols = [c for c in X.columns if pd.api.types.is_numeric_dtype(X[c])]
+    # coerce string columns that mostly contain numeric content
+    obj_like = X.select_dtypes(include=["object", "string"]).columns.tolist()
+    if obj_like:
+        cleaned = (
+            X[obj_like]
+            .apply(lambda col: col.astype(str).str.replace(r"[,\s%￥¥]", "", regex=True))
+        )
+        coerced = cleaned.apply(pd.to_numeric, errors="coerce")
+        for col in obj_like:
+            valid_ratio = coerced[col].notna().mean()
+            if valid_ratio >= 0.5:
+                X[col] = coerced[col]
+
+    num_cols = [c for c in X.columns if pd.api.types.is_numeric_dtype(X[c]) or pd.api.types.is_bool_dtype(X[c])]
     cat_cols = [c for c in X.columns if (not pd.api.types.is_numeric_dtype(X[c])) and (X[c].dtype.name != "datetime64[ns]")]
 
     pre = ColumnTransformer(
         transformers=[
             ("num", Pipeline([("imp", SimpleImputer(strategy="median")), ("sc", StandardScaler())]), num_cols),
-            ("cat", Pipeline([("imp", SimpleImputer(strategy="most_frequent")), ("oh", OneHotEncoder(handle_unknown="ignore", min_frequency=0.01))]), cat_cols),
+            ("cat", Pipeline([("imp", SimpleImputer(strategy="most_frequent")), ("oh", OneHotEncoder(handle_unknown="ignore", sparse_output=False, min_frequency=0.01))]), cat_cols),
         ],
         remainder="drop"
     )
