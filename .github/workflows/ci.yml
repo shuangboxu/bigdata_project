@@ -1,0 +1,39 @@
+# Minimal CI workflow: install pinned dev deps, run ruff (lint/static checks),
+# then run pytest filtered to the new IO tests (pytest -k test_io_utils).
+# Purpose: 及早发现风格/静态问题并验证基础 I/O 行为；低风险，可在新分支上回滚。
+
+name: minimal-ci
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements-lock.txt ]; then
+            pip install -r requirements-lock.txt
+          else
+            pip install black ruff isort pytest pandas
+          fi
+
+      - name: Run ruff
+        run: |
+          ruff check .
+
+      - name: Run pytest (only new IO tests)
+        run: |
+          pytest -q -k test_io_utils
